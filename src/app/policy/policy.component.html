@@ -1,0 +1,344 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)"class="p-5">
+
+
+
+
+    <h2 class="text-center">Create Plan Details </h2>
+    
+    
+    
+    
+    <!-- <img src="/assets/insurance.jpg"> -->
+    
+    
+    
+    
+    <input type="hidden" name="PolicyId" [value]="obj.policyData.PolicyId">
+    
+    
+    
+    
+    <div class="login-block">
+    
+    
+    
+    
+    <div class="form-group">
+    
+    
+    
+    
+    <div class="input-group">
+    
+    
+    
+    
+    <div class="input-group-prepend">
+    
+    
+    
+    
+    <div class="input-group-text bg-white">
+    
+    
+    
+    
+    
+    <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="PolicyTpe.valid"
+    
+    
+    
+    
+    [class.red-icon]="PolicyType.invalid && PolicyType.touched"></i>
+    
+    
+    
+    
+    <input name="PolicyType" #PolicyType="ngModel" [(ngModel)]="obj.policyData.PolicyType" placeholder="Plan Type"
+    
+    
+    
+    
+    class="form-control" required>
+    
+    
+    
+    
+    
+    </div></div> </div> </div>
+    
+    
+    
+    
+    
+    <div class="form-group">
+    
+    
+    
+    
+    <div class="input-group">
+    
+    
+    
+    
+    <div class="input-group-prepend">
+    
+    
+    
+    
+    <div class="input-group-text bg-white">
+    
+    
+    
+    
+    <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="InsuranceAmount.valid"
+    
+    
+    
+    
+    [class.red-icon]="InsuranceAmount.invalid && InsuranceAmount.touched"></i>
+    
+    
+    
+    
+    <input type="number" name="InsuranceAmount" #InsuranceAmount="ngModel" [(ngModel)]="obj.policyData.InsuranceAmount" placeholder="InsuranceAmount" type="number"
+    
+    
+    
+    
+    class="form-control" required >
+    
+    
+    
+    
+    </div></div> </div> </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="form-group">
+    
+    
+    
+    
+    <div class="input-group">
+    
+    
+    
+    
+    <div class="input-group-prepend">
+    
+    
+    
+    
+    <div class="input-group-text bg-white">
+    
+    
+    
+    
+    <i class="fa fa-calendar" aria-hidden="true" [class.green-icon]="PolicyStartDate.valid"
+    
+    
+    
+    
+    [class.red-icon]="PolicyStartDate.invalid && PolicyStartDate.touched"></i>
+    
+    
+    
+    
+    <input type="date" name="PolicyStartDate" #PolicyStartDate="ngModel" [(ngModel)]="obj.policyData.PolicyStartDate" placeholder="yyyy-mm-dd"
+    
+    
+    
+    
+    class="form-control" required >
+    
+    
+    
+    
+    </div></div> </div> </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="form-group">
+    
+    
+    
+    
+    <div class="input-group">
+    
+    
+    
+    
+    <div class="input-group-prepend">
+    
+    
+    
+    
+    <div class="input-group-text bg-white">
+    
+    
+    
+    
+    <i class="fa fa-calendar" aria-hidden="true" [class.green-icon]="PolicyExpiryDate.valid"
+    
+    
+    
+    
+    [class.red-icon]="PolicyExpiryDate.invalid && PolicyExpiryDate.touched"></i>
+    
+    
+    
+    
+    <input type="date" name="PolicyExpiryDate" #End="ngModel" [(ngModel)]="obj.policyData.PolicyExpiryDate" placeholder="yyyy-mm-dd"
+    
+    
+    
+    
+    class="form-control" required >
+    
+    
+    
+    
+    </div></div> </div> </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="form-group">
+    
+    
+    
+    
+    <div class="input-group">
+    
+    
+    
+    
+    <div class="input-group-prepend">
+    
+    
+    
+    
+    <div class="input-group-text bg-white">
+    
+    
+    
+    
+    <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]=" VehicleId.valid"
+    
+    
+    
+    
+    [class.red-icon]="VehicleId.invalid && VehicleId.touched"></i>
+    
+    
+    
+    
+    <input type="number" name="VehicleId" #VehicleId="ngModel" [(ngModel)]="obj.policyData.VehicleId" placeholder="VehicleId"
+    
+    
+    
+    
+    class="form-control" required >
+    
+    
+    
+    
+    </div></div> </div> </div>
+    
+    
+    
+    
+    
+    <div class="form-group">
+    
+    
+    
+    
+        <div class="input-group">
+    
+       
+    
+        <div class="input-group-prepend">
+    
+       
+    
+        <div class="input-group-text bg-white">
+    
+       
+    
+        <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="ComapanyIdentificationNo.valid"
+    
+       
+    
+        [class.red-icon]="ComapanyIdentificationNo.invalid && ComapanyIdentificationNo.touched"></i>
+    
+       
+    
+        <input type="number" name="ComapanyIdentificationNo" #ComapanyIdentificationNo="ngModel" [(ngModel)]="obj.policyData.ComapanyIdentificationNo" placeholder="ComapanyIdentificationNo"
+    
+       
+    
+        class="form-control" required >
+    
+       
+    
+        </div></div> </div> </div>
+    
+       
+    
+       
+    
+       
+    
+    
+    
+    
+    
+    
+    <div class="form-group">
+    
+    
+    
+    
+    <button class="btn btn-success btn-lg" type="submit"
+    
+    
+    
+    
+    [disabled]="form.invalid" >
+    
+    
+    
+    
+    <i class="fa fa-database"></i>Create/Update</button>
+    
+    
+    
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+    
+    
+    
+    </form>
+    
+    
+    
+    
