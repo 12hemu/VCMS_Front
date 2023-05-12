@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { SignupService } from '../shared/signup.service';
+import { SignupService } from 'src/shared/signup.service';
+
 
 
 @Component({
@@ -17,7 +18,7 @@ export class SignupComponent implements OnInit {
 
   resetForm(form?:NgForm){
     if(form!=null){
-      form.reset();
+      form.form.reset();
     }
     else{
       this.obj.registerData={UserId:0,UserName:'',UserAge:'',UserAddress:'',UserState:'',UserCountry:'',UserEmail:'',UserContact:'',LicenceNo:'',UserPassword:''}

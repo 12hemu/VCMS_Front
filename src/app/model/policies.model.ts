@@ -1,10 +1,9 @@
 export class Policies {
-     PolicyId ;
-         PolicyName ;
-         PolicyAmount; 
-        StartDate ;
-         ExpiryDate; 
-        VehicleId; 
-         CompanyId ;
-
+  PolicyId;
+  PolicyName;
+  PolicyAmount;
+  StartDate;
+  ExpiryDate;
+  VehicleId;
+  CompanyId;
 }

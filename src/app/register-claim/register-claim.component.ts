@@ -1,27 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { ClaimsService } from 'src/shared/claims.service';
 
 @Component({
-  selector: 'app-claims',
-  templateUrl: './claims.component.html',
-  styleUrls: ['./claims.component.css']
+  selector: 'app-register-claim',
+  templateUrl: './register-claim.component.html',
+  styleUrls: ['./register-claim.component.css']
 })
-export class ClaimsComponent implements OnInit {
+export class RegisterClaimComponent implements OnInit {
 
-  constructor(public obj: ClaimsService) {}
+  constructor( public obj:ClaimsService,private router: RouterModule) { }  
 
-  ngOnInit() {this.obj.getClaims();}
-  
-    
-  
+  ngOnInit():void {this.resetForm() 
 
-  resetForm(form?: NgForm) {
-    if (form != null) {
-      form.form.reset();
-    } else {
-      this.obj.claimData = {
-        ClaimId: 0,
+  } 
+
+ 
+ 
+
+  resetForm(form?:NgForm){ 
+
+    if(form!=null){ 
+
+      form.form.reset(); 
+
+    } 
+
+    else{ 
+
+      this.obj.claimData={ClaimId:0, 
         VehicleBill:'',
 
         DriverLicenseNo:'', 
@@ -47,55 +55,43 @@ export class ClaimsComponent implements OnInit {
        UserId:'', 
 
         PolicyId:'', 
-      };
-    }
-  }
-  fillform(selectedPP)
-  {
-    this.obj.claimData= Object.assign({},selectedPP);
-  }
 
-  
-  
-  
+      
 
-  del(ClaimId) {
-    if (confirm('Do you want to delete the policy ?')) {
-      this.obj.delClaims(ClaimId).subscribe(
-        (res) => {
-          this.obj.getClaims();
+    } 
 
-          alert('Claim Deleted!!!');
-        },
+  } 
 
-        (err) => alert('Errror!!!' + err)
-      );
-    }
-  }
-  accept()
+} 
 
-  {
+ 
+ 
 
-    this.obj.postClaims().subscribe(res => {
+  onSubmit(form:NgForm) 
 
-      this.obj.getClaims();
+  { 
 
-      alert("Accepted!!!")
+    this.obj.postClaims().subscribe(res => { 
 
-    },
+      this.obj.getClaims(); 
 
-    err => {
+      alert("Inserted Successfully!!!") 
 
-      alert("Not Inserted"+err)
+    }, 
 
-    })
+    err => { 
 
-   
+      alert("Not Inserted"+err) 
 
-  }
+    }) } 
+    
+  // fillform(selectedPP)
+  // {
+  //   this.obj.claimData= Object.assign({},selectedPP);
+  // }
   // insertRecord(form:NgForm)
   //   {
-  //     this.obj.postClaims().subscribe(res=>
+  //     this.obj.().subscribe(res=>
   //       {
   //         this.resetForm(form);
   //         this.obj.claimList;
@@ -118,5 +114,4 @@ export class ClaimsComponent implements OnInit {
   //     err=>{alert('Error!!!'+err);}
   //     )
   //   }
-
 }

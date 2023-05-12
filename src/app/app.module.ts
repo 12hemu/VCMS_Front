@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
@@ -16,6 +16,8 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterClaimComponent } from './register-claim/register-claim.component';
+import { RegisterPolicyComponent } from './policy/register-policy/register-policy.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +32,14 @@ import { HttpClientModule } from '@angular/common/http';
     InsuranceCompaniesComponent,
     VehiclesComponent,
     ContactComponent,
-    AboutComponent
+    RegisterPolicyComponent,
+    AboutComponent,
+    RegisterClaimComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule,CommonModule,
     HttpClientModule,
     ReactiveFormsModule
   ],

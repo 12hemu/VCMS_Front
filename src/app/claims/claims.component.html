@@ -1,1 +1,77 @@
-<p>claims works!</p>
+<div class="container">
+    <div class="row g-0">
+      <div class="row g-0">
+        <div
+          class="col text-center p-2 mb-3 rounded-3 text-black"
+          style="background-color: #af9057"
+        >
+          <span class="fs-3">POLICIES</span>
+        </div>
+      </div>
+  
+      <div class="col">
+        <table class="table table-hover text-white">
+          <thead class="thead text-info" style="font-weight: 1">
+            <tr>
+              <th>ClaimId</th>
+              <th>VehicleBill</th>
+  
+              <th>DriverLicenseNo</th>
+              <th>ClaimDocuments</th>
+  
+              <th>ClaimReason</th>
+  
+             <th>ClaimAmount</th>
+  
+              <th>BankBranch</th>
+  
+              <th>BankName</th>
+  
+              <th>BankAccountNo</th>
+              <th>IfscCode</th>
+              <th>UserId</th>
+              
+              <th>ComapanyId</th>
+            </tr>
+          </thead>
+  
+          <tbody class="thead text-black" style="font-weight: 1">
+            <tr *ngFor="let c of obj.claimList">
+              <td (click)="fillform(c.ClaimId)">{{ c.ClaimId }}</td>
+              <td (click)="fillform(c.VehicleBill)">{{ c.VehicleBill}}</td>
+  
+              <td (click)="fillform(c.DriverLicenseNo)">{{c.DriverLicenseNo }}</td>
+              <td (click)="fillform(c.ClaimDocuments)">{{c.ClaimDocuments }}</td>
+            
+              
+              <td (click)="fillform(c.ClaimReason)">{{ c.ClaimReason }}</td>
+  
+              <td (click)="fillform(c.ClaimAmount)">{{ c.ClaimAmount }}</td>
+              <td (click)="fillform(c.BankBranch)">{{ c.BankBranch }}</td>
+              <td (click)="fillform(c.BankName)">{{ c.BankName }}</td>
+  
+              <td (click)="fillform(c.BankAccountNo)">{{ c.BankAccountNo }}</td>
+              <td (click)="fillform(c.IfscCode)">{{ c. IfscCode}}</td>
+              
+  
+              <td (click)="fillform(c.ClaimStatus)">{{c.ClaimStatus }}</td>
+  
+              <td (click)="fillform(c.UserId)">{{ c.UserId }}</td>
+              <td (click)="fillform(c.PolicyId)">{{ c.PolicyId }}</td>
+  
+              
+  
+              <td>
+                <button type="button" class="btn btn-danger rounded-5" (click)="del(c.ClaimId)">Reject <i class="fa fa-trash"></i>
+
+                </button>
+                
+                 <button type="submit" class="fa fa-user-circle-o green-icon" ><a (click)="accept()">Accept</a> </button>
+               
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

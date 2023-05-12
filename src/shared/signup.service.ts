@@ -8,7 +8,7 @@ import { Users } from 'src/app/model/users.model';
 })
 export class SignupService {
 
-  registerUrl = "https://localhost:5001/api/UserDetails";
+  registerUrl = "https://localhostap:5001/api/UserDetails";
 
   constructor(public objcHttp:HttpClient) { }
 
