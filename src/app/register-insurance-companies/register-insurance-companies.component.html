@@ -1,0 +1,97 @@
+
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="p-5">
+    <h2 class="text-center">Select Company Details</h2>
+    <input name="CompanyId" #CompanyId="ngModel"
+    [(ngModel)]="obj.registerData.CompanyId"  />
+  
+    <div class="login-block">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i
+                class="fa fa-user-circle-o"
+                aria-hidden="true"
+                [class.green-icon]="CompanyName.valid"
+                [class.red-icon]="CompanyName.invalid && CompanyName.touched"
+              ></i>
+  
+              <input
+                name="CompanyName"
+                #CompanyName="ngModel"
+                [(ngModel)]="obj.registerData.CompanyName"
+                placeholder="CompanyName"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i
+                class="fa fa-diamond"
+                aria-hidden="true"
+                [class.green-icon]="CompanyContact.valid"
+                [class.red-icon]="CompanyContact.invalid && CompanyContact.touched"
+              ></i>
+  
+              <input
+                type="text"
+                name="CompanyContact"
+                #CompanyContact="ngModel"
+                [(ngModel)]="obj.registerData.CompanyContact"
+                placeholder="CompanyContact"
+                
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i
+                class="bi bi-house"
+                aria-hidden="true"
+                [class.green-icon]="CompanyAddress.valid"
+                [class.red-icon]="CompanyAddress.invalid && CompanyAddress.touched"
+              ></i>
+  
+              <input
+                type="text"
+                name="CompanyAddress"
+                #CompanyAddress="ngModel"
+                [(ngModel)]="obj.registerData.CompanyAddress"
+                placeholder="CompanyAddress"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      
+   
+      <div class="form-group">
+        <button
+          class="btn btn-success btn-lg"
+          (click)="onSubmit(form)"
+         type="button"
+          [disabled]="form.invalid"
+        >
+        Register
+        </button>
+      </div>
+    </div>
+  </form>
+  

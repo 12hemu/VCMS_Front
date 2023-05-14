@@ -8,7 +8,8 @@
               class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
               alt="Sample photo">
             <div class="card-body p-4 p-md-5">
-              <input type="hidden" name="UserId" [value]="obj.registerData.UserId">
+              <input type="hidden" name="UserId"#UserId="ngModel"
+              [(ngModel)]="obj.registerData.UserId" [value]="obj.registerData.UserId">
         <div class="row g-0">
           <div class="col text-center p-2 mb-3 rounded-3 text-black" style="background-color:#f868b0">
             
@@ -87,8 +88,17 @@
                   </div>
                 </div> -->
   
-                <button type="submit" class="btn btn-success btn-lg mb-1" (click)="onSubmit(form)">Submit</button>
-  
+                <!-- <button type="submit" class="btn btn-success btn-lg mb-1" (click)="onSubmit(form)">Submit</button>
+                  
+   -->
+   <button
+   class="btn btn-success btn-lg"
+   (click)="onSubmit(form)"
+  type="button"
+   [disabled]="form.invalid"
+ >
+  Register
+ </button>
               </form>
   
             </div>

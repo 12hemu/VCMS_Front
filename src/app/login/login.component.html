@@ -13,12 +13,15 @@
                     
                   </div>
   
-                  <form>
+                  <!-- <form>
                     <p>Please login to your account</p>
   
                     <div class="form-outline mb-4">
                       <input type="email" id="form2Example11" class="form-control"
-                        placeholder="Phone number or email address" />
+                        placeholder="Username" 
+                        #UserName="ngModel"
+  [(ngModel)]="obj.registerData.UserName"/>
+                        
                       <label class="form-label" for="form2Example11">Username</label>
                     </div>
   
@@ -38,6 +41,81 @@
                       <button type="button" class="btn btn-outline-danger">Create new</button>
                     </div>
   
+                  </form> -->
+                  <form #form="ngForm" autocomplete="off"  class="p-5">
+                    <h2 class="text-center">Please Login</h2>
+                    <!-- <input name="UserName" #UserName="ngModel"
+                    [(ngModel)]="obj.registerData.UserName"  /> -->
+                  
+                    <div class="login-block">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                              <i
+                                class="fa fa-user-circle-o"
+                                aria-hidden="true"
+                                [class.green-icon]="UserName.valid"
+                                [class.red-icon]="UserName.invalid && UserName.touched"
+                              ></i>
+                  
+                              <input
+                                name="UserName"
+                                #UserName="ngModel"
+                                [(ngModel)]="obj.registerData.UserName"
+                                placeholder="UserName"
+                                class="form-control"
+                                required
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                              <i
+                                class="fa fa-diamond"
+                                aria-hidden="true"
+                                [class.green-icon]="Password.valid"
+                                [class.red-icon]="Password.invalid && Password.touched"
+                              ></i>
+                  
+                              <input
+                              type="Password"
+                                
+                                name="Password"
+                                #Password="ngModel"
+                                [(ngModel)]="obj.registerData.Password"
+                                placeholder="Password"
+                              
+                                class="form-control"
+                                required
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-center pt-1 mb-5 pb-1">
+                        <!-- <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log
+                          in</button> -->
+                        <a class="text-muted" href="#!">Forgot password?</a>
+                      </div>
+                  
+                      
+                      <div class="form-group">
+                        <button
+                          class="btn btn-success btn-lg"
+                          (click)="loginProcess()"
+                         type="button"
+                          [disabled]="form.invalid"
+                        >
+                         Login
+                        </button>
+                      </div>
+                    </div>
                   </form>
   
                 </div>

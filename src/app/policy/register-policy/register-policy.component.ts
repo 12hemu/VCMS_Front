@@ -25,10 +25,10 @@ export class RegisterPolicyComponent implements OnInit {
         PolicyId: 0,
         PolicyName: '',
         PolicyAmount: '',        
-        StartDate: '',
-        ExpiryDate: '',
-        VehicleId: '',
-        CompanyId: '',
+        StartDate: '2023-05-05T00:00:00',
+        ExpiryDate: '2023-05-05T00:00:00',
+        VehicleId: 0,
+        CompanyId: 0,
       };
     }
   }

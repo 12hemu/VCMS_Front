@@ -18,6 +18,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterClaimComponent } from './register-claim/register-claim.component';
 import { RegisterPolicyComponent } from './policy/register-policy/register-policy.component';
+import { RegisterVehiclesComponent } from './register-vehicles/register-vehicles.component';
+import { RegisterInsuranceCompaniesComponent } from './register-insurance-companies/register-insurance-companies.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { RegisterPolicyComponent } from './policy/register-policy/register-polic
     ContactComponent,
     RegisterPolicyComponent,
     AboutComponent,
-    RegisterClaimComponent
+    RegisterClaimComponent,
+    RegisterVehiclesComponent,
+    RegisterInsuranceCompaniesComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

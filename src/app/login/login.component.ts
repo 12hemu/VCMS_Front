@@ -13,35 +13,34 @@ import { AuthorizeService } from '../shared/authorize.service';
 })
 export class LoginComponent implements OnInit {
   formGroup!: FormGroup;
-  constructor(private authService:AuthorizeService, private http:HttpClient, private router: Router){}
+  constructor(public obj:AuthorizeService, private http:HttpClient, private router: Router){}
   
   ngOnInit(){
-    this.initForm();
+    // this.initForm();
     
   }
-  initForm(){
-    this.formGroup=new FormGroup({
-      UserName:new FormControl("",[Validators.required]),
-      Password:new FormControl("",[Validators.required])
-    })
-  }  
+  // initForm(){
+  //   this.formGroup=new FormGroup({
+  //     UserName:new FormControl("",[Validators.required]),
+  //     Password:new FormControl("",[Validators.required])
+  //   })
+  // }  
 
 
   loginProcess(){
-    if(this.formGroup.valid){
-      this.authService.login(this.formGroup.value).subscribe(result=>{
-        console.log(result);
-        localStorage.setItem("token",result.JwtToken);
-        if(result.JwtToken != null){         
+    // if(this.formGroup.valid){
+      this.obj.login().subscribe(result=>{
+        localStorage.setItem("token",result['Token']);
+        if(result['Token'] != null){         
           alert("Login Successful");
+        } else {
+          alert("Login is unsuccessful");
         }
-
-        alert("Login is unsuccessful")
                 
-        this.router.navigate(['/category'])
+        this.router.navigate(['/'])
         
       })
-    }
+    
   }
 
   

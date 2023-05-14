@@ -1,0 +1,71 @@
+
+<div class="container">
+    <div class="row g-0">
+      <div class="row g-0">
+        <div
+          class="col text-center p-2 mb-3 rounded-3 text-black"
+          style="background-color: #af9057"
+        >
+          <span class="fs-3">User Details</span>
+        </div>
+      </div>
+  
+      <div class="col">
+        <table class="table table-hover text-white">
+          <thead class="thead text-info" style="font-weight: 1">
+            <tr>
+              <th>UserId</th>
+  
+              <th>UserName</th>
+  
+              <th>UserPassword</th>
+  
+              <th>UserAge</th>
+  
+              <th>UserState</th>
+  
+              <th>UserCountry</th>
+              <th>UserEmail</th>
+              
+              <th>UserContact</th>
+              
+              <th>LicenceNo</th>
+            </tr>
+          </thead>
+  
+          <tbody class="thead text-black" style="font-weight: 1">
+            <tr *ngFor="let u of obj.registerList">
+              <td (click)="fillform(u)">{{ u.UserId}}</td>
+  
+              <td (click)="fillform(u)">{{ u.UserName }}</td>
+              <td (click)="fillform(u)">{{ u.UserPassword }}</td>
+  
+              <td (click)="fillform(u)">{{ u.UserAge}}</td>
+  
+              <td (click)="fillform(u)">{{ u.UserState}}</td>
+  
+              <td (click)="fillform(u)">{{u.UserCountry }}</td>
+  
+              <td (click)="fillform(u)">{{ u.UserEmail}}</td>
+  
+              <td (click)="fillform(u)">{{  u.UserContact}}</td>
+              <td (click)="fillform(u)">{{  u.LicenceNo}}</td>
+  
+              <td>
+                  <button
+                    type="button"
+                    class="btn btn-danger rounded-5"
+                    (click)="del(u.UserId)"
+                  > <i class="fa fa-trash"></i></button>
+                  <button type="submit" class="fa fa-user-circle-o red-icon" ><a  (click)="fillform(u)">Edit</a> </button>
+               
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+   
+
+  

@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
   constructor(public obj:SignupService) { }
 
   ngOnInit() {this.resetForm()
+    this.obj.getUsers();
   }
 
   resetForm(form?:NgForm){
@@ -21,7 +22,7 @@ export class SignupComponent implements OnInit {
       form.form.reset();
     }
     else{
-      this.obj.registerData={UserId:0,UserName:'',UserAge:'',UserAddress:'',UserState:'',UserCountry:'',UserEmail:'',UserContact:'',LicenceNo:'',UserPassword:''}
+      this.obj.registerData={UserId:0,UserName:'',UserAge:0,UserAddress:'',UserState:'',UserCountry:'',UserEmail:'',UserContact:'',LicenceNo:'',UserPassword:''}
     }
   }
 

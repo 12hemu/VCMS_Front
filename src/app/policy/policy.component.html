@@ -32,19 +32,19 @@
   
           <tbody class="thead text-black" style="font-weight: 1">
             <tr *ngFor="let p of obj.registerList">
-              <td (click)="fillform(p.PolicyId)">{{ p.PolicyId }}</td>
+              <td (click)="fillform(p)">{{ p.PolicyId }}</td>
   
-              <td (click)="fillform(p.PolicyName)">{{ p.PolicyName }}</td>
+              <td (click)="fillform(p)">{{ p.PolicyName }}</td>
   
-              <td (click)="fillform(p.PolicyAmount)">{{ p.PolicyAmount }}</td>
+              <td (click)="fillform(p)">{{ p.PolicyAmount }}</td>
   
-              <td (click)="fillform(p.StartDate)">{{ p.StartDate }}</td>
+              <td (click)="fillform(p)">{{ p.StartDate }}</td>
   
-              <td (click)="fillform(p.ExpiryDate)">{{ p.ExpiryDate }}</td>
+              <td (click)="fillform(p)">{{ p.ExpiryDate }}</td>
   
-              <td (click)="fillform(p.VehicleId)">{{ p.VehicleId }}</td>
+              <td (click)="fillform(p)">{{ p.VehicleId }}</td>
   
-              <td (click)="fillform(p.CompanyId)">{{ p.CompanyId }}</td>
+              <td (click)="fillform(p)">{{ p.CompanyId }}</td>
   
               <td>
                   <button
@@ -52,7 +52,7 @@
                     class="btn btn-danger rounded-5"
                     (click)="del(p.PolicyId)"
                   > <i class="fa fa-trash"></i></button>
-                  <button type="submit" class="fa fa-user-circle-o red-icon" ><a (click)="fillform(p)">Edit</a> </button>
+                  <button type="submit" class="fa fa-user-circle-o red-icon" ><a  (click)="fillform(p)">Edit</a> </button>
                
               </td>
             </tr>
@@ -63,4 +63,4 @@
   </div>
    
 
-  -->
+  

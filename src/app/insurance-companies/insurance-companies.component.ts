@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InsurancecompaniesService } from '../shared/insurancecompanies.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-insurance-companies',
@@ -7,9 +9,56 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsuranceCompaniesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public obj: InsurancecompaniesService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+  
+    this.obj.getCompany();
+  }
+
+  resetForm(form?: NgForm) {
+    if (form != null) {
+      form.form.reset();
+    } else {
+      this.obj.registerData = {
+        CompanyId:0,
+        CompanyName:'',
+       CompanyContact:'',
+        CompanyAddress:''
+      };
+    }
+  }
+
+  // onSubmit(form: NgForm) {
+  //   this.obj.postPolicies().subscribe(
+  //     (res) => {
+  //       this.obj.getPolicies();
+
+  //       alert('Inserted Successfully!!!');
+  //     },
+
+  //     (err) => {
+  //       alert('Not Inserted' + err);
+  //     }
+  //   );
+  // }
+  fillform(selected) {
+this.obj.registerData=Object.assign({},selected);
+}
+  
+
+  del(Companyd) {
+    if (confirm('Do you want to delete the policy ?')) {
+      this.obj.delCompany(Companyd).subscribe(
+        (res) => {
+          this.obj.getCompany();
+
+          alert('Company Deleted!!!');
+        },
+
+        (err) => alert('Errror!!!' + err)
+      );
+    }
   }
 
 }

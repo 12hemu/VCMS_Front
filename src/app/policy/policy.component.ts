@@ -20,13 +20,13 @@ export class PolicyComponent implements OnInit {
       form.form.reset();
     } else {
       this.obj.registerData = {
-        PolicyId: '',
+        PolicyId: 0,
         PolicyName: '',
         PolicyAmount: '',
         StartDate: '',
         ExpiryDate: '',
-        VehicleId: '',
-        CompanyId: ''
+        VehicleId: 0,
+        CompanyId: 0
       };
     }
   }
