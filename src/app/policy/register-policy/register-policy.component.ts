@@ -13,7 +13,7 @@ export class RegisterPolicyComponent implements OnInit {
 
   constructor(public obj: PoliciesService, private router: RouterModule) {}
 
-  ngOnInit():void  {    
+  ngOnInit():void  {this.resetForm();   
     this.obj.getPolicies();    
   }
 
@@ -28,7 +28,7 @@ export class RegisterPolicyComponent implements OnInit {
         StartDate: '2023-05-05T00:00:00',
         ExpiryDate: '2023-05-05T00:00:00',
         VehicleId: 0,
-        CompanyId: 0,
+        CompanyId: 0
       };
     }
   }

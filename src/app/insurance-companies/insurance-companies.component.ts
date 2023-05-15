@@ -48,7 +48,7 @@ this.obj.registerData=Object.assign({},selected);
   
 
   del(Companyd) {
-    if (confirm('Do you want to delete the policy ?')) {
+    if (confirm('Do you want to delete the company ?')) {
       this.obj.delCompany(Companyd).subscribe(
         (res) => {
           this.obj.getCompany();

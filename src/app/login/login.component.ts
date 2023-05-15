@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthorizeService } from '../shared/authorize.service';
 
 
+
+ 
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,20 @@ export class LoginComponent implements OnInit {
   
   ngOnInit(){
     // this.initForm();
+     
     
+    
+  }
+  resetForm(form?: NgForm) {
+    if (form != null) {
+      form.form.reset();
+    } else {
+      this.obj.registerData = {
+        UserName:'',
+        Password:'',
+        Token:''
+      };
+    }
   }
   // initForm(){
   //   this.formGroup=new FormGroup({
@@ -27,9 +42,10 @@ export class LoginComponent implements OnInit {
   // }  
 
 
-  loginProcess(){
+  loginProcess(form: NgForm){
     // if(this.formGroup.valid){
       this.obj.login().subscribe(result=>{
+        this.resetForm(form);
         localStorage.setItem("token",result['Token']);
         if(result['Token'] != null){         
           alert("Login Successful");
@@ -39,7 +55,8 @@ export class LoginComponent implements OnInit {
                 
         this.router.navigate(['/'])
         
-      })
+      });
+
     
   }
 

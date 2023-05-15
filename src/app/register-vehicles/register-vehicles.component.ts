@@ -12,7 +12,8 @@ export class RegisterVehiclesComponent implements OnInit {
 
   constructor( public obj:VehicleService,private router: RouterModule) { }  
 
-  ngOnInit():void {this.resetForm() 
+  ngOnInit():void {this.resetForm();
+    this.obj.getVehicle();   
 
   } 
 

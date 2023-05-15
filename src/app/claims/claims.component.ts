@@ -65,7 +65,7 @@ export class ClaimsComponent implements OnInit {
         (res) => {
           this.obj.getClaims();
 
-          alert('Claim Deleted!!!');
+          alert('Claim Rejected!!!');
         },
 
         (err) => alert('Errror!!!' + err)

@@ -4,32 +4,87 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse" id="navbarNav"  >
+
+
+      <ul class="navbar-nav" >
        
-          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
-        
-        
-          <a class="nav-link" routerLink="login" >Login</a>
-        
-        
-          <a class="nav-link" routerLink="signup">Signup</a>
-          <a class="nav-link" routerLink="userdetails">User Details</a>
-          <a class="nav-link" routerLink="registerpolicy">Policy Registration</a>
-          <a class="nav-link" routerLink="policy">Policy Details</a>
+        <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+      
+      
+        <a class="nav-link" routerLink="login" >Login</a>
+      
+      
+        <a class="nav-link" routerLink="signup">Signup</a>
+        <a class="nav-link" routerLink="userdetails">User Details</a>
+        <!-- <a class="nav-link" routerLink="registerpolicy">Policy Registration</a>
+        <a class="nav-link" routerLink="policy">Policy Details</a>
 
-          <a class="nav-link" routerLink="registerclaim">Claims Registration</a>
+        <a class="nav-link" routerLink="registerclaim">Claims Registration</a>
 
-          <a class="nav-link" routerLink="claims">Claims Details</a>
-          <a class="nav-link" routerLink="registervehicles">Vehicle Registration</a>
-          <a class="nav-link" routerLink="vehicles">Vehicle Details</a>
-          <a class="nav-link" routerLink="registerinsurancecompanies">Company Registration</a>
-          <a class="nav-link" routerLink="insurancecompanies">Company Details</a>
-          <a class="nav-link" routerLink="adminlogin">Admin</a>
+        <a class="nav-link" routerLink="claims">Claims Details</a>
+        <a class="nav-link" routerLink="registervehicles">Vehicle Registration</a>
+        <a class="nav-link" routerLink="vehicles">Vehicle Details</a>
+        <a class="nav-link" routerLink="registerinsurancecompanies">Company Registration</a>
+        <a class="nav-link" routerLink="insurancecompanies">Company Details</a> -->
+        <a class="nav-link" routerLink="adminlogin">Admin</a>
 
 
+      
+    </ul>
+
+
+
+
+
+
+
+
+
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Vehicles
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="registervehicles"> Register Vehicle </a></li>
+        <li><a class="dropdown-item" routerLink="vehicles">Vehicle Details</a></li>
+        
         
       </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Policies
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="registerpolicy"> Register  Policies  </a></li>
+        <li><a class="dropdown-item" routerLink="policy">  Policy Details</a></li>
+        
+        
+      </ul>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Claims
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="registerclaim"> Register Claim  </a></li>
+        <li><a class="dropdown-item" routerLink="claims">Claims Details</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Company
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="registerinsurancecompanies"> Select Company </a></li>
+        <li><a class="dropdown-item" routerLink="insurancecompanies">Company Details</a></li>
+      </ul>
+    </li>
+
+      
     </div>
   </div>
 </nav>

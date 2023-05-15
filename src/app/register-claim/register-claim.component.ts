@@ -75,7 +75,7 @@ export class RegisterClaimComponent implements OnInit {
 
       this.obj.getClaims(); 
 
-      alert("Inserted Successfully!!!") 
+      alert("Claim Inserted Successfully!!!It will get the approved after verification.") 
 
     }, 
 

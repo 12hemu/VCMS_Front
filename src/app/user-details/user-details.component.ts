@@ -54,7 +54,7 @@ this.obj.registerData=Object.assign({},selected);
   
 
   del(UserId) {
-    if (confirm('Do you want to delete the policy ?')) {
+    if (confirm('Do you want to delete the User ?')) {
       this.obj.delUsers(UserId).subscribe(
         (res) => {
           this.obj.getUsers();
@@ -73,7 +73,7 @@ this.obj.registerData=Object.assign({},selected);
 
         this.obj.getUsers();
 
-        alert('Plan record Updated!!!');
+        alert('User record Updated!!!');
       },
 
       (err) => {

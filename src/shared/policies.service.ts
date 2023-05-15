@@ -15,11 +15,7 @@ export class PoliciesService {
   constructor(public objcHttp:HttpClient) { }
   registerUrl = "https://localhost:5001/api/PolicyDetails";
 
-  // registerList: Policies[];
-  // registerData: Policies=new Policies();
-  
-
-
+   
   getPolicies() { 
     this.objcHttp.get(this.registerUrl).toPromise().then(res => this.registerList = res as Policies[] )
   }
@@ -52,5 +48,5 @@ export class PoliciesService {
   // navigate(): void{
   //   this.router.navigate(['/delete'])
   }
-// }
-// }
+
+
